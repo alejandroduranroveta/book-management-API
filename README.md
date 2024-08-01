@@ -14,7 +14,7 @@ Este proyecto es un servicio de gestión de libros desarrollado realizado por Ma
     ```bash
     git clone https://github.com/alejandroduranroveta/book-management-API.git
     ```
-3. Navega al directorio del proyecto:
+2. Navega al directorio del proyecto:
     ```bash
     cd book-management-API/book-management
     ```
@@ -22,6 +22,11 @@ Este proyecto es un servicio de gestión de libros desarrollado realizado por Ma
     ```bash
     docker-compose up
     ```
+4. Conecta la BD
+
+Database: *bookdb*
+Username: *sa*
+Password: *Passw1rd!*
 
 ## Uso
 
@@ -31,6 +36,7 @@ Para usar la colección de Postman:
 Es necesario descargar la coleccion de la carpeta *PostmanCollection* y ese archivo importarlo en Postman Desktop
 
 ### Endpoints
+*Para crear un libro va a precisar crear un autor y un nuevo editorial
 
 - `POST /authors`: Crear un nuevo autor.
 - `POST /publisher`: Crear un nuevo editorial.
