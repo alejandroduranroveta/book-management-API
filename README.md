@@ -5,7 +5,7 @@ Este proyecto es un servicio de gestión de libros desarrollado realizado por Ma
 
 1- Docker instalado.
 
-2- Postman Desktop
+2- Postman Desktop.
 
 ## Instalación
 
