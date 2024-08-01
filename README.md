@@ -12,7 +12,7 @@ Este proyecto es un servicio de gestión de libros desarrollado realizado por Ma
     ```
 3. Navega al directorio del proyecto:
     ```bash
-    cd book-management-API/scr
+    cd book-management-API/book-management
     ```
 3. Levanta los contenedores con Docker Compose:
     ```bash
@@ -23,10 +23,16 @@ Este proyecto es un servicio de gestión de libros desarrollado realizado por Ma
 
 La API estará disponible en `http://localhost:3000`.
 
+Para usar la colección de Postman:
+Es necesario descargar la coleccion de la carpeta *PostmanCollection* y ese archivo importarlo en Postman
+
 ### Endpoints
 
+- `POST /authors`: Crear un nuevo autor.
+- `POST /publisher`: Crear un nuevo editorial.
 
 - `POST /books`: Crear un nuevo libro.
+- `GET /books/:id`: Obtener un libro segun su id.
 - `GET /books`: Obtener una lista de libros.
 - `PUT /books/:id`: Actualizar un libro existente.
 - `DELETE /books/:id`: Eliminar un libro.
