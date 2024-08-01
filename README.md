@@ -16,17 +16,26 @@ Este proyecto es un servicio de gestión de libros desarrollado realizado por Ma
     ```
 2. Navega al directorio del proyecto:
     ```bash
-    cd book-management-API/book-management
+    cd book-management-API
     ```
 3. Levanta los contenedores con Docker Compose:
     ```bash
     docker-compose up
     ```
-4. Conecta la BD
+
+4. Levantar la aplicación
+   ```bash
+    npm run start
+    ```
+
+5. Conecta la BD
 
 Database: *bookdb*
+
 Username: *sa*
+
 Password: *Passw1rd!*
+
 
 ## Uso
 
