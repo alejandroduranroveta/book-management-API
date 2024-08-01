@@ -3,7 +3,8 @@
 Este proyecto es un servicio de gestión de libros desarrollado realizado por Mario Alejandro Duran Roveta con NestJS. Permite crear, actualizar y gestionar libros, asi como crear autores y editoriales.
 ## Requisitos
 
-1- Docker instalado
+1- Docker instalado.
+
 2- Postman Desktop
 
 ## Instalación
