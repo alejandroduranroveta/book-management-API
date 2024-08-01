@@ -9,24 +9,36 @@ Este proyecto es un servicio de gestión de libros desarrollado realizado por Ma
 
 ## Instalación
 
-1. Clona el repositorio o descarga el release
+1. Clona el repositorio 
    Para clonar el repositorio 
     ```bash
     git clone https://github.com/alejandroduranroveta/book-management-API.git
     ```
 2. Navega al directorio del proyecto:
     ```bash
-    cd book-management-API/book-management
+    cd book-management-API
     ```
 3. Levanta los contenedores con Docker Compose:
     ```bash
     docker-compose up
     ```
-4. Conecta la BD
+4. Instalar librerias
+   ```bash
+    npm i
+    ```
+4. Levantar la aplicación
+   ```bash
+    npm run start
+    ```
+
+5. Conecta la BD
 
 Database: *bookdb*
+
 Username: *sa*
+
 Password: *Passw1rd!*
+
 
 ## Uso
 
