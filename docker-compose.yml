@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    restart: always
+    volumes:
+      - './postgres_data:/var/lib/postgresql/data'
+    environment:
+      - POSTGRES_USER=sa
+      - POSTGRES_PASSWORD=Passw1rd!
+      - POSTGRES_DB=bookdb
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - '5432:5432'
