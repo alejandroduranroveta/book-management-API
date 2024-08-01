@@ -22,7 +22,10 @@ Este proyecto es un servicio de gestión de libros desarrollado realizado por Ma
     ```bash
     docker-compose up
     ```
-
+4. Instalar librerias
+   ```bash
+    npm i
+    ```
 4. Levantar la aplicación
    ```bash
     npm run start
