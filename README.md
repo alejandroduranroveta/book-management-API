@@ -24,7 +24,7 @@ Este proyecto es un servicio de gestión de libros desarrollado realizado por Ma
 La API estará disponible en `http://localhost:3000`.
 
 Para usar la colección de Postman:
-Es necesario descargar la coleccion de la carpeta *PostmanCollection* y ese archivo importarlo en Postman
+Es necesario descargar la coleccion de la carpeta *PostmanCollection* y ese archivo importarlo en Postman Desktop
 
 ### Endpoints
 
