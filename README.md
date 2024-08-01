@@ -9,7 +9,7 @@ Este proyecto es un servicio de gestión de libros desarrollado realizado por Ma
 
 ## Instalación
 
-1. Clona el repositorio o descarga el release
+1. Clona el repositorio 
    Para clonar el repositorio 
     ```bash
     git clone https://github.com/alejandroduranroveta/book-management-API.git
