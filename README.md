@@ -20,20 +20,15 @@ Este proyecto es un servicio de gestión de libros desarrollado realizado por Ma
     ```
 3. Levanta los contenedores con Docker Compose:
     ```bash
-    docker-compose up
-    ```
-4. Instalar librerias
-   ```bash
-    npm i
-    ```
-4. Levantar la aplicación
-   ```bash
-    npm run start
+    docker-compose up -d
     ```
 
-5. Conecta la BD
+
+4. Conecta la BD
 
 Database: *bookdb*
+
+Port: *5432*
 
 Username: *sa*
 
