@@ -48,6 +48,7 @@ Es necesario descargar la coleccion de la carpeta *PostmanCollection* y ese arch
 - `POST /authors`: Crear un nuevo autor.
 - `POST /publisher`: Crear un nuevo editorial.
 
+
 - `POST /books`: Crear un nuevo libro.
 - `GET /books/:id`: Obtener un libro segun su id.
 - `GET /books`: Obtener una lista de libros.
