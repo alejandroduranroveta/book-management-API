@@ -1,4 +1,4 @@
-version: '3.9'
+version: '4'
 
 services:
   app:
@@ -7,27 +7,30 @@ services:
       dockerfile: Dockerfile
     environment:
       DATABASE_HOST: db
-      DATABASE_PORT: 3000
+      DATABASE_PORT: 5432
       DATABASE_USER: sa
       DATABASE_PASSWORD: Passw1rd!
       DATABASE_NAME: bookdb
     depends_on:
       - db
+    ports:
+      - "3000:3000"
     volumes:
       - ./src:/app/src
+
 
   db:
     image: postgres:latest
     environment:
-      DATABASE_HOST: postgres
-      DATABASE_PORT: 5432
-      DATABASE_USER: sa
-      DATABASE_PASSWORD: Passw1rd!
-      DATABASE_NAME: bookdb
+      POSTGRES_USER: sa
+      POSTGRES_PASSWORD: Passw1rd!
+      POSTGRES_DB: bookdb
     ports:
       - "5432:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
+
+
 networks:
   app-network:
     driver: bridge
