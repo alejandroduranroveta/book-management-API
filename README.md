@@ -20,7 +20,7 @@ Este proyecto es un servicio de gestión de libros desarrollado realizado por Ma
     ```
 3. Levanta los contenedores con Docker Compose:
     ```bash
-    docker-compose up -d
+    docker-compose up 
     ```
 
 
