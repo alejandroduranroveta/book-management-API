@@ -8,23 +8,14 @@ import { AuthorController } from './controllers/author.controller';
 import { AuthorService } from './services/author.service';
 import { PublisherController } from './controllers/publisher.controller';
 import { PublisherService } from './services/publisher.service';
-
+import { AppDataSource } from '../ormconfig';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'sa',
-      password: 'Passw1rd!',
-      database: 'bookdb',
-      autoLoadEntities: true,
-      synchronize: true,
-    }),
+    TypeOrmModule.forRoot(AppDataSource.options), // la conexion de la bd
     InfrastructureModule,
   ],
-  controllers: [AppController, BookController,AuthorController,PublisherController],
-  providers: [BookService,AuthorService,PublisherService],
+  controllers: [AppController, BookController, AuthorController, PublisherController],
+  providers: [BookService, AuthorService, PublisherService],
 })
 export class AppModule {}

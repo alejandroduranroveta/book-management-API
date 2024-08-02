@@ -1,12 +1,13 @@
-FROM node:14
+FROM node:18-alpine3.16
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY package*.json ./
+COPY package.json package-lock.json  ./
+
 RUN npm install
 
 COPY . .
 
 RUN npm run build
 
-CMD ["node", "dist/main"]
+CMD [ "npm", "run", "start:dev" ]
