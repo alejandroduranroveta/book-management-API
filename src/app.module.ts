@@ -12,7 +12,7 @@ import { AppDataSource } from '../ormconfig';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(AppDataSource.options), // la conexion de la bd
+    TypeOrmModule.forRoot(AppDataSource.options), 
     InfrastructureModule,
   ],
   controllers: [AppController, BookController, AuthorController, PublisherController],

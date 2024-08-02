@@ -3,7 +3,6 @@ import { Book } from './src/entities/book.entity';
 import { Publisher } from './src/entities/publisher.entity';
 import { DataSource } from 'typeorm';
 
-//la conexion de la base de datos
 export const AppDataSource = new DataSource({
   type: "postgres",
   host: "localhost",
