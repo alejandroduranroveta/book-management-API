@@ -131,3 +131,4 @@ dist
 
 # Ignore PostgreSQL data directory
 postgres_data
+package-lock.json

@@ -10,6 +10,6 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter(),
   );
-  await app.listen(3001);
+  await app.listen(3000);
 }
 bootstrap();

@@ -1,5 +1,5 @@
 
-import { ConflictException, Inject, Injectable } from "@nestjs/common";
+import { ConflictException, Inject, Injectable, InternalServerErrorException, NotFoundException } from "@nestjs/common";
 import { Book } from "../entities/book.entity";
 import { AuthorRepository } from "../repositories/interfaces/author.repository";
 import { BookRepository } from "../repositories/interfaces/book.repository";
@@ -53,34 +53,48 @@ export class BookService {
   }
 
   async updateBook(id: string, bookData: UpdateBookDTO): Promise<Book> {
-    const book = await this.bookRepository.findById(id);
-    if (!book) {
-        throw new Error('Book not found');
-    }
+    try {
 
-    const publisher = await this.publisherRepository.findById(bookData.publisher.id);
-    if (!publisher) {
-        throw new ConflictException('Publisher not found');
-    }
-
-    const authors = [];
-    for (const authorData of bookData.authors) {
-        const author = await this.authorRepository.findById(authorData.id);
-        if (!author) {
-            throw new ConflictException(`Author with id ${authorData.id} not found`);
+        const book = await this.bookRepository.findById(id);
+        if (!book) {
+            throw new NotFoundException('Book not found');
         }
-        authors.push(author);
+
+        if (bookData.publisher) {
+            const publisher = await this.publisherRepository.findById(bookData.publisher.id);
+            if (!publisher) {
+                console.error(`Publisher with ID ${bookData.publisher.id} not found`);
+                throw new ConflictException('Publisher not found');
+            }
+            book.publisher = publisher;
+        }
+
+        if (bookData.authors) {
+            const authors = [];
+            for (const authorData of bookData.authors) {
+                const author = await this.authorRepository.findById(authorData.id);
+                if (!author) {
+                    throw new ConflictException(`Author with id ${authorData.id} not found`);
+                }
+                authors.push(author);
+            }
+            book.authors = authors;
+        }
+
+        const { authors, publisher, ...otherBookData } = bookData;
+        Object.assign(book, otherBookData);
+
+        const updatedBook = await this.bookRepository.update(id, book);
+        return updatedBook;
+    } catch (error) {
+
+        if (error instanceof NotFoundException || error instanceof ConflictException) {
+            throw error; 
+        }
+
+        throw new InternalServerErrorException(`Failed to update book: ${error.message}`);
     }
-
-    book.title = bookData.title;
-    book.isbn = bookData.isbn;
-    book.year = bookData.year;
-    book.pages = bookData.pages;
-    book.publisher = publisher;
-    book.authors = authors;
-
-    return this.bookRepository.update(id, book);
-  }
+}
 
   async deleteBook(id: string): Promise<void> {
     return this.bookRepository.delete(id);
